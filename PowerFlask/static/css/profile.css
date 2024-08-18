@@ -1,0 +1,98 @@
+/* Section profile */
+.profile_container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 7rem;
+    padding: 0rem 2rem 0rem 2rem;
+}
+
+/* Título da section profile */
+.profile_container .profile_title h1 {
+    color: var(--title-color);
+    font-size: 4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: default;
+    transition: font-weight 0.5s ease;
+}
+
+.profile_container .profile_title h1:hover {
+    font-weight: 600;
+}
+
+/* Card da section com as informações obtidas do usuário */
+.profile_card {
+    width: 50%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.4s ease;
+}
+
+.profile_card:hover {
+    transform: scale(1.01);
+    box-shadow: 0px 0px 12px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Primeira linha do card */
+.profile_card_row_title {
+    margin-top: 15px;
+}
+
+/* Item dentro da primeira linha do card */
+.profile_card_row_title .profile_item {
+    margin: 0px 10px 18px 10px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Linha do card */
+.profile_card_row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    flex-direction: row;
+}
+
+/* Item dentro da linha no card */
+.profile_item {
+    flex: 1;
+    margin: 20px 20px;
+    width: 50%;
+    text-align: left;
+}
+
+/* Label do item */
+.profile_label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: var(--title-color);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    cursor: default;
+}
+
+/* Informação passada para o html */
+.profile_value {
+    font-size: 1.5rem;
+    display: block;
+    color: var(--text-color);
+}
+
+@media screen and (max-width: 992px) {
+    .profile_container {
+        gap: 2rem;
+    }
+    .profile_card {
+        width: 80%;
+    }
+    .profile_card_row {
+        flex-direction: column;
+    }
+}

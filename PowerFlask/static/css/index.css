@@ -1,0 +1,26 @@
+/* Section Index, menu principal */
+.index_container {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+}
+
+/* Título da section */
+.index_container .index_title {
+    color: var(--title-color);
+    font-size: 4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: default;
+    margin: 0rem 2rem 0rem 2rem;
+    transition: font-weight .5s ease;
+}
+
+.index_container .index_title:hover {
+    font-weight: 600;
+}

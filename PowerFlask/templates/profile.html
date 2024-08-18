@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}User {{ user.displayName or "Sem registro..." }}{% endblock %}
+
+{% block content %}
+    <section class="profile_container">
+
+        <!--============= Título da section profile =============-->
+        <div class="profile_title">
+            <h1>Perfil do Usuário</h1>
+        </div>
+
+        <!--============= Card com as informações obtidas do usuário =============-->
+        <div class="profile_card">
+
+            <!--============= Div primeira linha do card =============-->
+            <div class="profile_card_row_title">
+
+                <!--============= Nome completo =============-->
+                <div class="profile_item">
+                    <span class="profile_label">
+                        Nome completo
+                    </span>
+                    <span class="profile_value">{{ user.displayName or "Sem registro..." }}</span>
+                </div>
+            </div>
+
+            <!--============= Div segunda linha do card =============-->
+            <div class="profile_card_row">
+
+                <!--============= E-mail =============-->
+                <div class="profile_item">
+                    <span class="profile_label">
+                        Email
+                    </span>
+                    <span class="profile_value">{{ user.mail or "Sem registro..." }}</span>
+                </div>
+
+                <!--============= cargo =============-->
+                <div class="profile_item">
+                    <span class="profile_label">
+                        Cargo
+                    </span>
+                    <span class="profile_value">{{ user.jobTitle or "Sem registro..." }}</span>
+                </div>
+            </div>
+
+            <!--============= Div terceira linha do card =============-->
+            <div class="profile_card_row">
+
+                <!--============= Primeiro nome =============-->
+                <div class="profile_item">
+                    <span class="profile_label">
+                        Primeiro nome
+                    </span>
+                    <span class="profile_value">{{ user.givenName or "Sem registro..." }}</span>
+                </div>
+
+                <!--============= Sobrenome =============-->
+                <div class="profile_item">
+                    <span class="profile_label">
+                        Sobrenome
+                    </span>
+                    <span class="profile_value">{{ user.surname or "Sem registro..." }}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

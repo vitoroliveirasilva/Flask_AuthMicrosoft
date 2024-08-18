@@ -1,0 +1,36 @@
+/* Section Login */
+.login_container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+    padding: 0rem 2rem 0rem 2rem;
+}
+
+/* Título da section */
+.login_container .login_title {
+    color: var(--title-color);
+    font-size: 4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: default;
+    transition: font-weight 0.5s ease;
+}
+
+.login_container .login_title:hover {
+    font-weight: 600;
+}
+
+/* Tag a de login da section */
+.login_container .login_access a img {
+    width: 200px;
+    height: 100px;
+    transition: transform 0.3s ease;
+}
+
+.login_container .login_access a img:hover {
+    transform: scale(1.03);
+}

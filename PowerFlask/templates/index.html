@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <section class="index_container">
+        <!--============= Título da section com o nome do usuário logado =============-->
+        <h1 class="index_title">Seja bem-vindo, {{ user.name }}!</h1>
+    </section>
+{% endblock %}

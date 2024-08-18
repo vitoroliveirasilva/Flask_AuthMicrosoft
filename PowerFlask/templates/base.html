@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--============= CSS =============-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!--============= JS - Navbar =============-->
+    <script src="../static/js/Navbar.js"></script>
+
+    <!--============= Icone =============-->
+    <link rel="shortcut icon" href="./assets/images/Python_Logo.png">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/Python_Logo.png') }}">
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <header>
+        <!--============= Menu Desktop =============-->
+        <nav class="navbar">
+            <!--============= LOGO =============-->
+            <div class="nav-logo">
+                <a href="{{ url_for('menu.index') }}">
+                    <img src="../static/assets/images/Python_Logo.png" alt="Logo">
+                    <h1>Flask Auth</h1>
+                </a>
+            </div>
+
+            <!--============= Verifica se o usuário está autenticado =============-->
+            {% if current_user.is_authenticated %}
+                <!--============= Opções Navbar =============-->
+                <div class="nav-list">
+                    <ul>
+                        <li class="nav-item"><a href="{{ url_for('menu.index') }}" class="nav-link">HOME</a></li>
+                        <li class="nav-item"><a href="{{ url_for('menu.profile') }}" class="nav-link">USER</a></li>
+                        <li class="nav-item"><a href="{{ url_for('auth.logout') }}" class="nav-link">LOGOUT</a></li>
+                    </ul>
+                </div>
+            {% endif %}
+
+            <!--============= Contato =============-->
+            <div class="nav-button">
+                <button><a href="https://github.com/vitoroliveirasilva" target="_blank">DEV GITHUB PROFILE</a></button>
+            </div>
+
+            <!--============= Verifica se o usuário está autenticado =============-->
+            {% if current_user.is_authenticated %}
+                <!--============= Icon menu - Responsividade =============-->
+                <div class="mobile-menu-icon">
+                    <button onclick="menushow()"><img class="icon" src="../static/assets/icons/open_menu_black.svg"></button>
+                </div>
+            {% endif %}
+        </nav>
+
+        <!--============= Menu Mobile =============-->
+        <!--============= Verifica se o usuário está autenticado =============-->
+        {% if current_user.is_authenticated %}
+            <!--============= Opções Navbar =============-->
+            <div class="mobile-menu">
+                <ul>
+                    <li class="nav-item"><a href="{{ url_for('menu.index') }}" class="nav-link">HOME</a></li>
+                    <li class="nav-item"><a href="{{ url_for('menu.profile') }}" class="nav-link">USER</a></li>
+                    <li class="nav-item"><a href="{{ url_for('auth.logout') }}" class="nav-link">LOGOUT</a></li>
+                </ul>
+                <!--============= Contato =============-->
+                <div class="nav-button">
+                    <button><a href="https://github.com/vitoroliveirasilva" target="_blank">MY GITHUB PROFILE</a></button>
+                </div>
+            </div>
+        {% endif %}
+    </header>
+
+    <main>
+        <!--============= Main definido nos demais templates =============-->
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <!--============= Contato Footer =============-->
+        <div class="footer-rights">
+            <a href="https://github.com/vitoroliveirasilva" target="_blank">&copy; 2024 - vitoroliveirasilva.</a>
+        </div>
+    </footer>
+</body>
+
+</html>
