@@ -19,20 +19,13 @@ Antes de começar, você precisará ter o Python e o pip instalados. Além disso
 
 ## Configuração do Ambiente
 
-1. **Clone o Repositório**
-
-   ```bash
-   git clone https://github.com/usuario/repo.git
-   cd repo
-   ```
-
-2. **Crie um Ambiente Virtual**
+1. **Crie um Ambiente Virtual**
 
    ```bash
    python -m venv venv
    ```
 
-3. **Ative o Ambiente Virtual**
+2. **Ative o Ambiente Virtual**
 
    - No Windows:
 
@@ -46,13 +39,13 @@ Antes de começar, você precisará ter o Python e o pip instalados. Além disso
      source venv/bin/activate
      ```
 
-4. **Instale as Dependências**
+3. **Instale as Dependências**
 
    ```bash
    pip install -r requirements.txt
    ```
 
-5. **Configure as Variáveis de Ambiente**
+4. **Configure as Variáveis de Ambiente**
 
    Crie um arquivo `.env` na raiz do projeto e adicione as seguintes variáveis:
 
